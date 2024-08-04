@@ -1,5 +1,7 @@
 from django.db import models
 
+from config import settings
+
 
 class Course(models.Model):
     title = models.CharField(
@@ -16,6 +18,8 @@ class Course(models.Model):
         null=True,
         help_text="Загрузите картинку",
     )
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Владелец',
+                              help_text='Укажите владельца')
 
     class Meta:
         verbose_name = "Курс"
@@ -49,6 +53,8 @@ class Lesson(models.Model):
     video = models.URLField(
         max_length=400, blank=True, null=True, help_text="Укажите ссылку на видео"
     )
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Владелец',
+                              help_text='Укажите владельца')
 
     class Meta:
         verbose_name = "Урок"
