@@ -1,0 +1,75 @@
+[
+  {
+    "model": "materials.course",
+    "pk": 2,
+    "fields": {
+      "title": "test",
+      "description": "testtest",
+      "preview": ""
+    }
+  },
+  {
+    "model": "materials.course",
+    "pk": 3,
+    "fields": {
+      "title": "Django",
+      "description": "Super",
+      "preview": ""
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 1,
+    "fields": {
+      "title": "test",
+      "description": "testtest",
+      "preview": "",
+      "course": null,
+      "video": null
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 2,
+    "fields": {
+      "title": "test2",
+      "description": "testtest34",
+      "preview": "",
+      "course": 2,
+      "video": null
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 3,
+    "fields": {
+      "title": "Django",
+      "description": "lesson 1",
+      "preview": "",
+      "course": 3,
+      "video": null
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 4,
+    "fields": {
+      "title": "Django",
+      "description": "lesson",
+      "preview": "",
+      "course": 3,
+      "video": null
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 5,
+    "fields": {
+      "title": "Django",
+      "description": "lesson 3",
+      "preview": "",
+      "course": 3,
+      "video": null
+    }
+  }
+]

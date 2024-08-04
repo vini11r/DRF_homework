@@ -1,0 +1,98 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$4k9rAP5yXrbBTjJA0b5Vil$bxjZ0VjNVFhyUOBGL5sATVNC3kUezzSmxoHs2u1odFU=",
+      "last_login": "2024-08-01T15:24:05.590Z",
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-08-01T15:22:29.220Z",
+      "email": "admin@email.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "123qwe",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-01T15:24:08Z",
+      "email": "user1@email.ru",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "123qwe",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-01T15:25:18Z",
+      "email": "user2@email.ru",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "date_payment": "2024-08-01",
+      "paid_course": 2,
+      "paid_lesson": null,
+      "payment_sum": null,
+      "payment_method": "cash"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "date_payment": "2024-08-01",
+      "paid_course": 3,
+      "paid_lesson": 5,
+      "payment_sum": null,
+      "payment_method": "transfer"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "date_payment": "2024-08-01",
+      "paid_course": 2,
+      "paid_lesson": null,
+      "payment_sum": null,
+      "payment_method": "cash"
+    }
+  }
+]
