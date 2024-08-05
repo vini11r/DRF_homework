@@ -24,7 +24,7 @@
     "pk": 2,
     "fields": {
       "password": "123qwe",
-      "last_login": null,
+      "last_login": "2024-08-04T15:58:13Z",
       "is_superuser": false,
       "first_name": "",
       "last_name": "",
@@ -52,6 +52,150 @@
       "is_active": true,
       "date_joined": "2024-08-01T15:25:18Z",
       "email": "user2@email.ru",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "123qwe",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-04T15:14:51Z",
+      "email": "user3@email.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 9,
+    "fields": {
+      "password": "123qwe",
+      "last_login": null,
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-08-04T15:55:05Z",
+      "email": "user5@email.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$pxog9JRKgKoFNKI1MPsSiy$e4u0R8fhtiUEp7xeqw2iwBZqsTG1kIo74TzAY8rOY2E=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-04T16:22:06.042Z",
+      "email": "user6@email.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 12,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$gsPuVsdzJhtiOxYESb0h1q$1jtb+o8ADhfqhZdkvqQ1fveJikw34DDUbCFlWU/wiAo=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-04T17:42:02Z",
+      "email": "user8@email.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 13,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$fJA7SNvYjVwfHp7aX2ntjJ$1vIChRXZojqHb4a80jhZF2MgODNst4bopezQw3DVm7E=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-04T18:27:20Z",
+      "email": "user9@email.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 14,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$KZUMU377opplzxPSxwaERT$itFDFfEAgHndTb+Tnmz3kGLTeViO3ylyA4JgYNqZPPU=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-04T18:37:37.077Z",
+      "email": "user10@email.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 15,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$9yZ4m5wP0lREHHdYIwyGze$fGRg1azgg7M8ATCYDQdGm5vSa/OYtYeSWKziG5u3JJ8=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-04T19:43:38.155Z",
+      "email": "user11@email.com",
       "phone": null,
       "city": null,
       "avatar": "",
