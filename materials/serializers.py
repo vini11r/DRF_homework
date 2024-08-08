@@ -1,15 +1,18 @@
-from rest_framework.serializers import ModelSerializer, SerializerMethodField
+from rest_framework import serializers
 
 from materials.models import Course, Lesson
+from materials.validators import validate_links
 
 
-class LessonSerializer(ModelSerializer):
+class LessonSerializer(serializers.ModelSerializer):
+    video = serializers.URLField(validators=[validate_links])
+
     class Meta:
         model = Lesson
         fields = "__all__"
 
 
-class CourseSerializer(ModelSerializer):
+class CourseSerializer(serializers.ModelSerializer):
     lesson = LessonSerializer(source="lessons", many=True, read_only=True)
 
     class Meta:
@@ -17,8 +20,8 @@ class CourseSerializer(ModelSerializer):
         fields = "__all__"
 
 
-class CourseDetailSerializer(ModelSerializer):
-    lesson_count = SerializerMethodField()
+class CourseDetailSerializer(serializers.ModelSerializer):
+    lesson_count = serializers.SerializerMethodField()
     lesson = LessonSerializer(source='lessons', many=True)
 
     def get_lesson_count(self, obj):

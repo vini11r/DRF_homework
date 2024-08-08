@@ -18,7 +18,8 @@ class Course(models.Model):
         null=True,
         help_text="Загрузите картинку",
     )
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Владелец',
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, blank=True, null=True,
+                              verbose_name='Владелец',
                               help_text='Укажите владельца')
 
     class Meta:
@@ -53,7 +54,8 @@ class Lesson(models.Model):
     video = models.URLField(
         max_length=400, blank=True, null=True, help_text="Укажите ссылку на видео"
     )
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Владелец',
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, blank=True, null=True,
+                              verbose_name='Владелец',
                               help_text='Укажите владельца')
 
     class Meta:
