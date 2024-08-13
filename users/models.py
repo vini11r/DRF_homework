@@ -50,15 +50,40 @@ class Payment(models.Model):
         ("transfer", "Перевод на счет"),
     )
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="payments", verbose_name="Пользователь"
+        User,
+        on_delete=models.CASCADE,
+        related_name="payments",
+        verbose_name="Пользователь",
     )
     date_payment = models.DateField(auto_now_add=True, verbose_name="Дата оплаты")
-    paid_course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name="paid_courses",
-                                    verbose_name="Оплаченный курс", blank=True, null=True)
-    paid_lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name="paid_lesson",
-                                    verbose_name="Оплаченный урок", blank=True, null=True)
-    payment_sum = models.PositiveIntegerField(verbose_name="Сумма оплаты", blank=True, null=True)
-    payment_method = models.CharField(max_length=20, choices=PAYMENT_METHOD, verbose_name="Способ оплаты")
+    paid_course = models.ForeignKey(
+        Course,
+        on_delete=models.CASCADE,
+        related_name="paid_courses",
+        verbose_name="Оплаченный курс",
+        blank=True,
+        null=True,
+    )
+    paid_lesson = models.ForeignKey(
+        Lesson,
+        on_delete=models.CASCADE,
+        related_name="paid_lesson",
+        verbose_name="Оплаченный урок",
+        blank=True,
+        null=True,
+    )
+    payment_sum = models.PositiveIntegerField(
+        verbose_name="Сумма оплаты", blank=True, null=True
+    )
+    payment_method = models.CharField(
+        max_length=20, choices=PAYMENT_METHOD, verbose_name="Способ оплаты"
+    )
+    session_id = models.CharField(
+        max_length=255, verbose_name="id сессии", blank=True, null=True
+    )
+    link = models.URLField(
+        max_length=400, verbose_name="ссылка на оплату", blank=True, null=True
+    )
 
     class Meta:
         verbose_name = "Оплата"

@@ -18,9 +18,14 @@ class Course(models.Model):
         null=True,
         help_text="Загрузите картинку",
     )
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, blank=True, null=True,
-                              verbose_name='Владелец',
-                              help_text='Укажите владельца')
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        verbose_name="Владелец",
+        help_text="Укажите владельца",
+    )
 
     class Meta:
         verbose_name = "Курс"
@@ -54,9 +59,14 @@ class Lesson(models.Model):
     video = models.URLField(
         max_length=400, blank=True, null=True, help_text="Укажите ссылку на видео"
     )
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, blank=True, null=True,
-                              verbose_name='Владелец',
-                              help_text='Укажите владельца')
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        verbose_name="Владелец",
+        help_text="Укажите владельца",
+    )
 
     class Meta:
         verbose_name = "Урок"
@@ -64,12 +74,16 @@ class Lesson(models.Model):
 
 
 class Subscription(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='Пользователь', on_delete=models.CASCADE)
-    course = models.ForeignKey(Course, verbose_name='Курс в подписке', on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, verbose_name="Пользователь", on_delete=models.CASCADE
+    )
+    course = models.ForeignKey(
+        Course, verbose_name="Курс в подписке", on_delete=models.CASCADE
+    )
 
     def __str__(self):
-        return f'{self.user} - {self.course}'
+        return f"{self.user} - {self.course}"
 
     class Meta:
-        verbose_name = 'Подписка'
-        verbose_name_plural = 'Подписки'
+        verbose_name = "Подписка"
+        verbose_name_plural = "Подписки"

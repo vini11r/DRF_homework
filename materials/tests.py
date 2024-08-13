@@ -9,23 +9,23 @@ from users.models import User
 class LessonTestCase(APITestCase):
     def setUp(self):
         self.user = User.objects.create(email="admin@example.com")
-        self.lesson = Lesson.objects.create(title="Test", description="Test description", owner=self.user)
+        self.lesson = Lesson.objects.create(
+            title="Test", description="Test description", owner=self.user
+        )
         self.client.force_authenticate(user=self.user)
 
     def test_lesson_retrieve(self):
         url = reverse("materials:lesson_detail", args=(self.lesson.pk,))
         response = self.client.get(url)
         data = response.json()
-        self.assertEqual(
-            response.status_code, status.HTTP_200_OK
-        )
-        self.assertEqual(data.get('title'), self.lesson.title)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(data.get("title"), self.lesson.title)
 
     def test_lesson_create(self):
         url = reverse("materials:lesson_create")
         data = {
-            'title': 'Test',
-            'description': 'Test description',
+            "title": "Test",
+            "description": "Test description",
         }
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
@@ -34,12 +34,12 @@ class LessonTestCase(APITestCase):
     def test_lesson_update(self):
         url = reverse("materials:lesson_update", args=(self.lesson.pk,))
         data = {
-            'title': 'Test update',
+            "title": "Test update",
         }
         response = self.client.patch(url, data)
         data = response.json()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(data.get('title'), 'Test update')
+        self.assertEqual(data.get("title"), "Test update")
 
     def test_lesson_delete(self):
         url = reverse("materials:lesson_delete", args=(self.lesson.pk,))
@@ -57,23 +57,22 @@ class LessonTestCase(APITestCase):
 class SubscriptionTestCase(APITestCase):
 
     def setUp(self):
-        self.user = User.objects.create(email='apitest@apitest.com')
-        self.course = Course.objects.create(title='Test Course', description='Test Course', owner=self.user)
-        self.subscription = Subscription.objects.create(user=self.user, course=self.course)
+        self.user = User.objects.create(email="apitest@apitest.com")
+        self.course = Course.objects.create(
+            title="Test Course", description="Test Course", owner=self.user
+        )
+        self.subscription = Subscription.objects.create(
+            user=self.user, course=self.course
+        )
         self.client.force_authenticate(user=self.user)
 
     def test_subscription_create(self):
         url = reverse("materials:course_subscribe")
         data = {
-            'user': self.user.pk,
-            'course': self.course.pk,
+            "user": self.user.pk,
+            "course": self.course.pk,
         }
         response = self.client.post(url, data)
         response.json()
-        self.assertEqual(
-            response.status_code, status.HTTP_200_OK
-        )
-        self.assertEqual(
-            response.json(),
-            {'message': 'Подписка отключена'}
-        )
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.json(), {"message": "Подписка отключена"})
