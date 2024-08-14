@@ -8,7 +8,7 @@ stripe.api_key = settings.STRIPE_API_KEY
 def create_stripe_product(product):
     """Создает новый stripe продукт"""
     product_paid = product.paid_course if product.paid_course else product.paid_lesson
-    stripe_product = stripe.Product.create(name=product_paid.title)
+    stripe_product = stripe.Product.create(name=product_paid.id)
     return stripe_product
 
 
