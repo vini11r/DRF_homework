@@ -13,7 +13,7 @@ def check_user():
     """
     Отправляет письмо с уведомлением о блокировке аккаунта.
     """
-    users = User.objects.filter(last_login__lt=timezone.now() - timedelta(minutes=1), is_active=True)
+    users = User.objects.filter(last_login__lt=timezone.now() - timedelta(days=30), is_active=True)
     email_list = []
     for user in users:
         user.is_active = False
